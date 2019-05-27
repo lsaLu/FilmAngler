@@ -1,3 +1,8 @@
-<p>
-  nav works!
-</p>
+<nav id="navbar">
+  <h1 id="logo">{{title}}</h1>
+  <ul id="nav-links">
+    <li *ngFor="let link of links">
+      {{link}}
+    </li>
+  </ul>
+</nav>
