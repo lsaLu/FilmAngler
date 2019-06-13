@@ -10,7 +10,7 @@ export class ProductsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    //call dataservice
+    //call dataservice, subscribe
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ILink } from '../interfaces/ILink';
+import { ILink } from 'src/app/interfaces/ILink';
 
 @Component({
   selector: 'app-nav',
@@ -10,7 +10,7 @@ export class NavComponent implements OnInit {
 
   @Input() title;
 
-  links:ILink[] = [
+  links: ILink[] = [
     { 
       name: "Home",
       route: "",
