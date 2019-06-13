@@ -9,7 +9,16 @@ import { IProduct } from 'src/app/interfaces/IProduct';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  singleProduct: IProduct;
+  singleProduct: IProduct = {
+    id: 0,
+    name: "",
+    imageUrl: "",
+    description: "",
+    price: 0,
+    year: 0,
+    added: "",
+    productCategory: []
+  };
 
   constructor(private route: ActivatedRoute, private service: DataService) { }
 

@@ -1,4 +1,12 @@
 <div class="detailsBox">
-  <h2>{{singleProduct.name}}</h2>
-  <button>
+  <img id="detailsImage" src={{singleProduct.imageUrl}} alt={{singleProduct.name}}>
+  <div id="productInfoBox">
+    <h2 class="infoBoxTitle">{{singleProduct.name}}, 
+      <span id="infoBoxYear">{{singleProduct.year}}</span>
+    </h2>
+    <p>{{singleProduct.description}}</p>
+    <button (click)="addProduct()">Add to cart</button>
+    <!-- back button -->
+    <!-- make add to cart button -->
+  </div>
 </div>
