@@ -8,10 +8,10 @@ import { ProductsComponent } from './components/products/products.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
-import { CartComponent } from './components/cart/cart.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './components/details/details.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +21,9 @@ import { DetailsComponent } from './components/details/details.component';
     HomeComponent,
     NotFoundComponent,
     SingleProductComponent,
-    CartComponent,
     AdminComponent,
-    DetailsComponent
+    DetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
