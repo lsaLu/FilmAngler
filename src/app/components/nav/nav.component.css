@@ -4,6 +4,8 @@
   display: flex;
   justify-content: space-between;
   margin: 0;
+  position: sticky;
+  top: 0;
   width: 100%;
 }
 #logo {
@@ -13,15 +15,20 @@
   margin: 0 20px;
 }
 #nav-links {
-  color: #fff;
-  font-family: sans-serif;
   height: 100%;
   list-style-type: none;
   margin: 0 20px;
 }
 #nav-links li {
-  font-family: serif; 
-  font-size: 2rem;
   float: left;
-  padding: 5px;
+  padding: 15px;
+}
+#nav-links a {
+  color: #fff;
+  font-family: fantasy;
+  font-size: 2rem;
+  text-decoration: none;
+}
+#nav-links a:visited {
+  color: #fff;
 }

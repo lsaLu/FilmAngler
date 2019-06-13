@@ -1,12 +1,13 @@
-<div class="detailsBox">
+<div id="detailsBox">
   <img id="detailsImage" src={{singleProduct.imageUrl}} alt={{singleProduct.name}}>
   <div id="productInfoBox">
-    <h2 class="infoBoxTitle">{{singleProduct.name}}, 
+    <h2 id="infoBoxTitle">{{singleProduct.name}}, 
       <span id="infoBoxYear">{{singleProduct.year}}</span>
     </h2>
-    <p>{{singleProduct.description}}</p>
-    <button (click)="addProduct()">Add to cart</button>
-    <!-- back button -->
-    <!-- make add to cart button -->
+    <p id="infoBoxText">{{singleProduct.description}}</p>
+    <div id="buttonContainer">
+      <button id="backButton" routerLink="/"> < </button>
+      <button id="addButton" (click)="addToCart()"> + </button>
+    </div>
   </div>
 </div>

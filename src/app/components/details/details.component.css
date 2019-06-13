@@ -1,0 +1,51 @@
+#detailsBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px 0;
+}
+#detailsImage {
+  box-shadow: -2px 5px 16px;
+  height: auto;
+  max-width: 25%;
+}
+
+
+#productInfoBox {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 30%;
+}
+
+#infoBoxTitle {
+  font-size: 3rem;
+  font-family: monospace;
+}
+#infoBoxYear {
+  color: #666;
+}
+#infoBoxText {
+  color: #333;
+  font-size: 2rem;
+  font-family: monospace;
+  margin: 0 auto;
+}
+
+#buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  margin: auto 0;
+}
+
+#backButton, #addButton {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-family: fantasy;
+  font-size: 7rem;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+}

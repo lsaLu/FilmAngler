@@ -1,6 +1,7 @@
 .productCard {
   font-family: monospace;
   margin: 20px;
+  text-align: center;
   width: 200px;
 }
 .productImage {
