@@ -1,3 +1,4 @@
-<p>
-  single-product works!
-</p>
+<div class="productCard" id="product{{product.id}}" routerLink="/details/{{product.id}}">
+  <img class="productImage" src="{{product.imageUrl}}" alt={{product.description}}>
+  <h2>{{product.name}}</h2>
+</div>

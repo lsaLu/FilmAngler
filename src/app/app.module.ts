@@ -9,7 +9,9 @@ import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { CartComponent } from './components/cart/cart.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,15 @@ import { AdminComponent } from './admin/admin.component';
     NotFoundComponent,
     SingleProductComponent,
     CartComponent,
-    AdminComponent
+    AdminComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    // FormsModule,
+    // ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

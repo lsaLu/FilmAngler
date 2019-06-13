@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IProduct } from '../interfaces/IProduct';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  productUrl: string;
   //getJSON api call, shop 17
-  constructor(private http: HttpClient) {
-    this.productUrl = "https://medieinstitutet-wie-products.azurewebsites.net/api/products";
-  }
+  constructor(private http: HttpClient) { }
+
   getProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(this.productUrl);
+    return this.http.get<IProduct[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/products');
+  }
+
+  getProduct(id): Observable<IProduct> {
+    return this.http.get<IProduct>('https://medieinstitutet-wie-products.azurewebsites.net/api/products/' + id);
   }
 }
