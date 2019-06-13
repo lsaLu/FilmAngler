@@ -1,8 +1,12 @@
 <nav id="navbar">
   <h1 id="logo">{{title}}</h1>
   <ul id="nav-links">
-    <li *ngFor="let link of links" (click)="openProduct()">
-      {{link}}
+    <li *ngFor="let link of links">
+      <a routerLink={{link.route}}
+        routerLinkActive="active"
+        routerLinkActiveOptions={{link.routeOptions}}>
+        {{link.name}}
+      </a>
     </li>
   </ul>
 </nav>

@@ -1,8 +1,10 @@
 <p>
   products works!
 </p>
-<div *ngFor="let product of products">
-  <img [src]="productImage" alt="">
-  <p class="title">{{product.title}}</p>
-  <p class="price">{{product.price}}</p>
-</div>
+<ul *ngFor="let product of products">
+  <li [id]="productId">
+    <img [src]="productImage" alt="">
+    <p class="title">{{product.title}}</p>
+    <p class="price">{{product.price}}</p>
+  </li>
+</ul>
