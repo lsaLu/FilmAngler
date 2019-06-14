@@ -14,7 +14,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { DetailsComponent } from './components/details/details.component';
-import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { CartComponent } from './components/cart/cart.component';
     SingleProductComponent,
     AdminComponent,
     DetailsComponent,
-    CartComponent
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
