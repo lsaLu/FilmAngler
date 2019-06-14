@@ -1,0 +1,9 @@
+#adminPanel {
+
+}
+#orderBox {
+  display: flex;
+}
+.order {
+  height: 100px;
+}

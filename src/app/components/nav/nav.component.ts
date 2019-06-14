@@ -17,11 +17,6 @@ export class NavComponent implements OnInit {
       routeOption: ["{ exact : true }"]
     },
     {
-      name: "Admin",
-      route: "/admin",
-      routeOption: [""]
-    },
-    {
       name: "Cart",
       route: "/cart",
       routeOption: [""]
