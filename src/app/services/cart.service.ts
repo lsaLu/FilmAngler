@@ -41,6 +41,22 @@ export class CartService {
 
   }
 
+  removeItem(id) {
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].movie.id === id) {
+        const newCart = cart.splice(i, 1);
+        localStorage.setItem('cart', JSON.stringify(newCart));
+        this.getCart();
+        return;
+      }
+    }
+  }
+
+  clearItems() {
+
+  }
+
   getCart() {
     return this.$cart;
   }

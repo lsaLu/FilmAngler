@@ -4,6 +4,7 @@ import { IOrder } from 'src/app/interfaces/IOrder';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { IOrderRows } from 'src/app/interfaces/IOrderRows';
 import { DataService } from 'src/app/services/data.service';
+import { CartService } from 'src/app/services/cart.service';
 
 var moment = require('moment');
 
@@ -24,8 +25,7 @@ export class CheckoutComponent implements OnInit {
     paymentMethod: ["", Validators.required]
   });
 
-  constructor(private fb: FormBuilder, private dataService: DataService) { }
-
+  constructor(private fb: FormBuilder, private dataService: DataService, private cartService:CartService) { }
 
   ngOnInit() {
     this.cart = JSON.parse(localStorage.getItem('cart'));
@@ -76,6 +76,15 @@ export class CheckoutComponent implements OnInit {
       this.totalPrice = 0;
       
     });
+  }
+
+
+  removeCartItem(id) {
+    this.cartService.removeItem(id);
+  }
+
+  clearCartItems() {
+    this.cartService.clearItems();
   }
 
 }

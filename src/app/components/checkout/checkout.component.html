@@ -8,8 +8,11 @@
         <p class="itemPrice">{{cartItem.movie.price}} SEK</p>
         <p class="itemAmount">{{cartItem.amount}} pcs.</p>
       </div>
+      <button class="removeButton"(click)="removeCartItem(cartItem.movie.id )"> - </button>
     </li>
   </ul>
+  <h3>Total price: {{totalPrice}} SEK</h3>
+  <button id="clearButton"(click)="clearCartItems()"> - </button>
 </div>
 <div id="formContainer">
   <form [formGroup]="form" (ngSubmit)="submitOrder()">
