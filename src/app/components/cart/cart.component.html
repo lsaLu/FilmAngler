@@ -1,9 +1,12 @@
 <div id="cartContainer">
   <ul id="cart">
     <li class="cartItem" *ngFor="let cartItem of cart">
-      <p class="itemName">{{cartItem.movie.name}}</p>
-      <p class="itemPrice">{{cartItem.movie.price}}</p>
-      
+      <div class="movieInfo">
+        <p class="itemName">{{cartItem.movie.name}}</p>
+        <p class="itemPrice">{{cartItem.movie.price}}</p>
+        <p class="itemAdded">{{cartItem.movie.added}}</p>
+      </div>
+      <p class="itemAmount">{{cartItem.amount}} pcs.</p>
     </li>
   </ul>
 </div>
