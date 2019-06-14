@@ -19,11 +19,11 @@ export class DataService {
     return this.http.get<IProduct>('https://medieinstitutet-wie-products.azurewebsites.net/api/products/' + id);
   }
 
-  createOrder() {
-    
-  }
-
   getOrders(): Observable<IOrder[]> {
     return this.http.get<IOrder[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/?companyId=17');
+  }
+
+  createOrder(order: IOrder): Observable<IOrder> {
+    return this.http.post<IOrder>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/', order);
   }
 }

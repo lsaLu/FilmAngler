@@ -2,3 +2,7 @@
   display: flex;
   flex-wrap: wrap;
 }
+.thumbImage{
+  height: 200px;
+  width: auto;
+}

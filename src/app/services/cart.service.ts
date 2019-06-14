@@ -20,8 +20,16 @@ export class CartService {
   addToCart(product: ICartItem) {
     if (localStorage.getItem('cart')) {
       const cart = JSON.parse(localStorage.getItem('cart'));
+      for (let i = 0; i < cart.length; i++) {
+        if (product.movie.id === cart[i].movie.id) {
+          cart[i].amount += 1;
+          localStorage.setItem('cart', JSON.stringify(cart));
+          return;
+        }
+      }
       const newCart = cart.concat(product);
       localStorage.setItem('cart', JSON.stringify(newCart));
+      
     } else {
       localStorage.setItem('cart', JSON.stringify([product]));
     }

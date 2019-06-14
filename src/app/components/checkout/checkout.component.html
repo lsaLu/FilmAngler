@@ -1,12 +1,13 @@
 <div id="cartContainer">
   <ul id="cart">
     <li class="cartItem" *ngFor="let cartItem of cart">
+      <img class="thumbImage" src={{cartItem.movie.imageUrl}} 
+        alt={{cartItem.movie.description}}>
       <div class="movieInfo">
         <p class="itemName">{{cartItem.movie.name}}</p>
-        <p class="itemPrice">{{cartItem.movie.price}}</p>
-        <p class="itemAdded">{{cartItem.movie.added}}</p>
+        <p class="itemPrice">{{cartItem.movie.price}} SEK</p>
+        <p class="itemAmount">{{cartItem.amount}} pcs.</p>
       </div>
-      <p class="itemAmount">{{cartItem.amount}} pcs.</p>
     </li>
   </ul>
 </div>

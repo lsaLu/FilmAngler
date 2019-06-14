@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ICartItem } from 'src/app/interfaces/ICartItem';
 import { IOrder } from 'src/app/interfaces/IOrder';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { IOrderRows } from 'src/app/interfaces/IOrderRows';
+import { DataService } from 'src/app/services/data.service';
+
+var moment = require('moment');
 
 @Component({
   selector: 'app-checkout',
@@ -10,9 +14,9 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 })
 export class CheckoutComponent implements OnInit {
   cart: ICartItem[];
+  orderRows: IOrderRows[] = [];
+  totalPrice: number = 0;
   order: IOrder;
-
-  constructor(private fb:FormBuilder) { }
 
   form = this.fb.group({
     companyId: ["", Validators.required],
@@ -20,23 +24,58 @@ export class CheckoutComponent implements OnInit {
     paymentMethod: ["", Validators.required]
   });
 
+  constructor(private fb: FormBuilder, private dataService: DataService) { }
+
+
   ngOnInit() {
     this.cart = JSON.parse(localStorage.getItem('cart'));
     this.form = new FormGroup({
-      companyId: new FormControl(),
-      createdBy: new FormControl(),
-      paymentMethod: new FormControl()
+      'companyId': new FormControl(),
+      'createdBy': new FormControl(),
+      'paymentMethod': new FormControl()
     });
+    this.calcTotalPrice();
+    this.formatOrderRows();
   }
 
-  stackDuplicates(cart) {
-    for(let i = 0; i < cart.length; i++) {
-      
+  calcTotalPrice() {
+    for (let i = 0; i < this.cart.length; i++) {
+      this.totalPrice += this.cart[i].movie.price * this.cart[i].amount;
+    }
+  }
+
+  formatOrderRows() {
+    for (let i = 0; i < this.cart.length; i++) {
+      const orderItem: IOrderRows = {
+        id: 0,
+        productId: this.cart[i].movie.id,
+        product: this.cart[i].movie.name,
+        amount: this.cart[i].amount,
+        orderId: 0
+      };
+      this.orderRows.push(orderItem);
     }
   }
 
   submitOrder() {
-    // this.order = 
+    this.order = {
+      id: 0,
+      companyId: 17,
+      created: moment().format(),
+      createdBy: this.form.controls.createdBy.value,
+      paymentMethod: this.form.controls.paymentMethod.value,
+      totalPrice: this.totalPrice,
+      status: 0,
+      orderRows: this.orderRows
+    }
+
+    this.dataService.createOrder(this.order).subscribe(data => {
+      localStorage.setItem('cart', JSON.stringify([]));
+      this.cart = [];
+      this.orderRows = [];
+      this.totalPrice = 0;
+      
+    });
   }
 
 }
