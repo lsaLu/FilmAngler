@@ -11,7 +11,7 @@
   </ul>
 </div>
 <div id="formContainer">
-  <form [formGroup]="customer" (ngSubmit)="submitOrder()">
+  <form [formGroup]="form" (ngSubmit)="submitOrder()">
     <label for="companyId">Company id:</label>
     <input type="text" formControlName="companyId" id="companyId">
     <label for="createdBy">Your name:</label>
@@ -21,6 +21,6 @@
       <option value="Swish">Swish</option>
       <option value="PayPal">PayPal</option>
     </select>
-    <button type="submit" [disabled]="!customer.valid">Submit order</button>
+    <button type="submit" [disabled]="!form.valid">Submit order</button>
   </form>
 </div>

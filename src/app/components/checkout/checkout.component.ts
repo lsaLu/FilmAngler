@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ICartItem } from 'src/app/interfaces/ICartItem';
 import { IOrder } from 'src/app/interfaces/IOrder';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-checkout',
@@ -12,14 +12,13 @@ export class CheckoutComponent implements OnInit {
   cart: ICartItem[];
   order: IOrder;
 
+  constructor(private fb:FormBuilder) { }
+
   form = this.fb.group({
-    companyId: [""],
-    createdBy: [""],
-    paymentMethod: [""]
+    companyId: ["", Validators.required],
+    createdBy: ["", Validators.required],
+    paymentMethod: ["", Validators.required]
   });
-  
-  constructor(private fb:FormBuilder) { 
-  }
 
   ngOnInit() {
     this.cart = JSON.parse(localStorage.getItem('cart'));

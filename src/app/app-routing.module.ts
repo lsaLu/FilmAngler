@@ -9,7 +9,7 @@ import { DetailsComponent } from './components/details/details.component';
 
 const routes: Routes = [
   { path : "", component : HomeComponent },
-  { path : "cart", component : CheckoutComponent },
+  { path : "checkout", component : CheckoutComponent },
   { path : "details/:id", component : DetailsComponent },
   { path : "admin", component : AdminComponent },
   { path : "**", component : NotFoundComponent }

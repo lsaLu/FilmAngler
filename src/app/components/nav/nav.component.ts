@@ -18,7 +18,7 @@ export class NavComponent implements OnInit {
     },
     {
       name: "Cart",
-      route: "/cart",
+      route: "/checkout",
       routeOption: [""]
     }
   ];
