@@ -10,3 +10,17 @@
     </li>
   </ul>
 </div>
+<div id="formContainer">
+  <form [formGroup]="customer" (ngSubmit)="submitOrder()">
+    <label for="companyId">Company id:</label>
+    <input type="text" formControlName="companyId" id="companyId">
+    <label for="createdBy">Your name:</label>
+    <input type="text" formControlName="createdBy" id="createdBy">
+    <label for="paymentMethod">Payment method:</label>
+    <select formControlName="paymentMethod" id="paymentMethod">
+      <option value="Swish">Swish</option>
+      <option value="PayPal">PayPal</option>
+    </select>
+    <button type="submit" [disabled]="!customer.valid">Submit order</button>
+  </form>
+</div>

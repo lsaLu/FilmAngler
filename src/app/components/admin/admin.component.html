@@ -1,7 +1,14 @@
-<div>
+<div id="adminPanel">
   <ul id="orderBox">
     <li class="order" *ngFor="let order of orders">
-      
+      <p>{{order.id}}</p>
+      <p>{{order.companyId}}</p>
+      <p>{{order.created}}</p>
+      <p>{{order.createdBy}}</p>
+      <p>{{order.paymentMethod}}</p>
+      <p>{{order.totalPrice}}</p>
+      <p>{{order.status}}</p>
+      <p>{{order.orderRows}}</p>
     </li>
   </ul>
 </div>

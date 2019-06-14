@@ -8,16 +8,7 @@ import { IOrder } from 'src/app/interfaces/IOrder';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  orders: IOrder[] = [{
-    id: 0,
-    companyId: 0,
-    created: "",
-    createdBy: "",
-    paymentMethod: "",
-    totalPrice: 0,
-    status: 0,
-    orderRows: []
-  }];
+  orders: IOrder[];
 
   constructor(private service: DataService) { }
 

@@ -4,6 +4,9 @@
   justify-content: space-around;
   padding: 50px 0;
 }
+#detailsImageBox {
+  height: 800px;
+}
 #detailsImage {
   box-shadow: -2px 5px 16px;
   height: auto;
