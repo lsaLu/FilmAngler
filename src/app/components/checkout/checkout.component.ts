@@ -6,7 +6,7 @@ import { IOrderRows } from 'src/app/interfaces/IOrderRows';
 import { DataService } from 'src/app/services/data.service';
 import { CartService } from 'src/app/services/cart.service';
 
-var moment = require('moment');
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-checkout',
@@ -49,7 +49,7 @@ export class CheckoutComponent implements OnInit {
       const orderItem: IOrderRows = {
         id: 0,
         productId: this.cart[i].movie.id,
-        product: this.cart[i].movie.name,
+        product: null,
         amount: this.cart[i].amount,
         orderId: 0
       };
@@ -68,6 +68,7 @@ export class CheckoutComponent implements OnInit {
       status: 0,
       orderRows: this.orderRows
     }
+    console.log(this.order);
 
     this.dataService.createOrder(this.order).subscribe(data => {
       localStorage.setItem('cart', JSON.stringify([]));
