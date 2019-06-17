@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { ICartItem } from '../interfaces/ICartItem';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,7 @@ export class CartService {
       if (cart[i].movie.id === id) {
         const newCart = cart.splice(i, 1);
         localStorage.setItem('cart', JSON.stringify(newCart));
+        //make dynamic
         this.getCart();
         return;
       }
@@ -54,7 +56,8 @@ export class CartService {
   }
 
   clearItems() {
-
+    localStorage.setItem('cart', JSON.stringify([]));
+    //make dynamic
   }
 
   getCart() {
